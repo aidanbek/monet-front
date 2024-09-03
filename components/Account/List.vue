@@ -13,6 +13,11 @@ const columns = [
     dataIndex: 'title',
   },
   {
+    title: 'Текущий баланс',
+    key: 'current_balance',
+    dataIndex: 'current_balance',
+  },
+  {
     title: 'Дата создания',
     key: 'created_at',
     dataIndex: 'created_at',

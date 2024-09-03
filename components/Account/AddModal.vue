@@ -1,5 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import { create } from '~/api/account'
+import type { ICreateAccount } from '~/types/Account'
 
 const props = defineProps({
   visibility: {
@@ -16,7 +17,7 @@ watch(() => props.visibility, (v) => {
   visible.value = v
 })
 
-const formData = reactive({})
+const formData = reactive<ICreateAccount>({})
 const formRef = ref()
 
 const createAccount = () => {
@@ -42,6 +43,17 @@ const createAccount = () => {
             :rules="[{ required: true, message: 'Заполните поле' }]"
           >
             <a-input сlass='mr-2' v-model:value='formData.title' show-count :maxlength='255' />
+          </a-form-item>
+        </a-col>
+      </a-row>
+      <a-row>
+        <a-col span="24">
+          <a-form-item
+            name='initial_balance'
+            label='Начальный баланс'
+            :rules="[{ required: true, message: 'Заполните поле' }]"
+          >
+            <a-input-number сlass='mr-2' v-model:value='formData.initial_balance' />
           </a-form-item>
         </a-col>
       </a-row>
