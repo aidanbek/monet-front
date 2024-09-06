@@ -1,4 +1,6 @@
 <script setup>
+import { TransactionTypeEnum } from '~/types/Transaction'
+
 defineProps({
   items: {
     type: Array,
@@ -41,7 +43,15 @@ const columns = [
 </script>
 
 <template>
-  <a-table :columns="columns" :data-source="items" />
+  <a-table :columns="columns" :data-source="items" >
+    <template #bodyCell='{ column, value, record }'>
+      <template v-if="column.key === 'amount'">
+        <span v-if="record.type === TransactionTypeEnum.INCOME">+{{ value }}</span>
+        <span v-if="record.type === TransactionTypeEnum.EXPENSE">-{{ value }}</span>
+        <span v-if="record.type === TransactionTypeEnum.TRANSFER">{{ value }}</span>
+      </template>
+    </template>
+  </a-table>
 </template>
 
 <style scoped lang="scss">
