@@ -14,8 +14,8 @@ const columns = [
   },
   {
     title: 'Тип',
-    key: 'type',
-    dataIndex: 'type',
+    key: 'type_title',
+    dataIndex: 'type_title',
   },
   {
     title: 'Текущий баланс',
