@@ -14,6 +14,11 @@
           </nuxt-link>
         </a-menu-item>
 
+        <a-menu-item key="transactions">
+          <nuxt-link to="/transactions">
+            <span>Транзакции</span>
+          </nuxt-link>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
 
