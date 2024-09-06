@@ -10,4 +10,12 @@ export interface IAccount {
 export interface ICreateAccount {
   title: string,
   initial_balance: number,
+  type: number,
+}
+
+export enum AccountTypeEnum {
+  CARD = 1,
+  CASH = 2,
+  ACCOUNT = 3,
+  CREDIT = 4
 }

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   items: {
     type: Array,
     required: true,
@@ -11,6 +11,11 @@ const columns = [
     title: 'Наименование',
     key: 'title',
     dataIndex: 'title',
+  },
+  {
+    title: 'Тип',
+    key: 'type',
+    dataIndex: 'type',
   },
   {
     title: 'Текущий баланс',
