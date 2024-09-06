@@ -8,6 +8,11 @@ defineProps({
 
 const columns = [
   {
+    title: 'ID',
+    key: 'id',
+    dataIndex: 'id',
+  },
+  {
     title: 'Счет',
     key: 'account_id',
     dataIndex: 'account_id',
@@ -36,13 +41,7 @@ const columns = [
 </script>
 
 <template>
-  <a-table :columns="columns" :data-source="items" >
-    <template #bodyCell='{ column, value, record }'>
-      <template v-if="column.key === 'title'">
-        <nuxt-link :to="`/transactions/${record.id}`">{{ value }}</nuxt-link>
-      </template>
-    </template>
-  </a-table>
+  <a-table :columns="columns" :data-source="items" />
 </template>
 
 <style scoped lang="scss">
