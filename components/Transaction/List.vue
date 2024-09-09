@@ -38,7 +38,7 @@ const columns = [
     title: 'Дата обновления',
     key: 'updated_at',
     dataIndex: 'updated_at',
-  }
+  },
 ];
 </script>
 
