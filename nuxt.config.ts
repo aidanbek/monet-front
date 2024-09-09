@@ -6,11 +6,7 @@ export default defineNuxtConfig({
   ssr: false,
   sourcemap: false,
 
-  modules: [
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-  ],
+  modules: ['@pinia/nuxt', '@vueuse/nuxt', '@unocss/nuxt', '@nuxt/icon'],
 
   vite: {
     plugins: [
