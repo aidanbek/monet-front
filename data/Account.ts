@@ -1,4 +1,4 @@
-import { AccountTypeEnum } from '~/types/Account'
+import { AccountTypeEnum } from '~/types1/Account'
 
 export const AccountTypes = [
   {

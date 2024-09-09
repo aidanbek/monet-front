@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { create } from '~/api/account'
-import type { ICreateAccount } from '~/types/Account'
+import type { ICreateAccount } from '~/types1/Account'
 import { AccountTypes } from '~/data/Account'
+import { useBankStore } from '~/stores/bankStore'
+import { storeToRefs } from 'pinia'
+
+const { getBanks } = useBankStore()
+const { banks } = storeToRefs(useBankStore())
 
 const props = defineProps({
   visibility: {
@@ -24,6 +29,11 @@ const formRef = ref()
 const createAccount = () => {
   create(formData)
 }
+
+
+onMounted(() => {
+  getBanks()
+})
 </script>
 
 <template>
@@ -48,7 +58,25 @@ const createAccount = () => {
         </a-col>
       </a-row>
       <a-row :gutter="[16, 16]">
-        <a-col span="12">
+        <a-col span="24">
+          <a-form-item
+            name='bank_id'
+            label='Банк'
+          >
+            <a-select v-model:value="formData.bank_id">
+              <a-select-option :value="null">Нет</a-select-option>
+              <a-select-option v-for="bank of banks" :key="bank.id" :value="bank.id" :label="bank.name">
+                <div class="flex items-center">
+                  <img class="w-5 h-5" :src="bank.icon_url" :alt="bank.name" />&nbsp;
+                  <span>{{ bank.name }}</span>
+                </div>
+              </a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
+      </a-row>
+      <a-row :gutter="[16, 16]">
+        <a-col span="24">
           <a-form-item
             name='type'
             label='Тип'
@@ -57,7 +85,9 @@ const createAccount = () => {
             <a-select :options="AccountTypes" v-model:value="formData.type" />
           </a-form-item>
         </a-col>
-        <a-col span="12">
+      </a-row>
+      <a-row :gutter="[16, 16]">
+        <a-col span="24">
           <a-form-item
             name='initial_balance'
             label='Начальный баланс'

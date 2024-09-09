@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getById } from '~/api/account'
-import type { IAccount } from '~/types/Account'
+import type { IAccount } from '~/types1/Account'
 
 const account = ref<IAccount>()
 const route = useRoute()

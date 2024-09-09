@@ -1,4 +1,4 @@
-import type { ITransaction, ICreateTransaction } from '~/types/Transaction'
+import type { ITransaction, ICreateTransaction } from '~/types1/Transaction'
 
 export const getAll = () => {
   const { $api } = useNuxtApp()

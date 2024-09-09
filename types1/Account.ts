@@ -11,6 +11,7 @@ export interface ICreateAccount {
   title: string,
   initial_balance: number,
   type: number,
+  bank_id: number | null,
 }
 
 export enum AccountTypeEnum {

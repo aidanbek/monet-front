@@ -1,4 +1,4 @@
-import type { IAccount, ICreateAccount } from '~/types/Account'
+import type { IAccount, ICreateAccount } from '~/types1/Account'
 
 export const getAll = () => {
   const { $api } = useNuxtApp()

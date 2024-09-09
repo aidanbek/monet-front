@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { getAll } from '~/api/transaction'
 
-export const useTransactionStore = defineStore('transactionstore', () => {
+export const useTransactionStore = defineStore('transactionStore', () => {
   const transactions = ref<any>([])
 
   const getTransactions = () => {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { create } from '~/api/transaction'
-import type { ICreateTransaction } from '~/types/Transaction'
+import type { ICreateTransaction } from '~/types1/Transaction'
 import { TransactionTypes } from '~/data/Transaction'
 import { useAccountStore } from '~/stores/accountStore'
 import { storeToRefs } from 'pinia'

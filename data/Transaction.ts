@@ -1,4 +1,4 @@
-import { TransactionTypeEnum } from '~/types/Transaction'
+import { TransactionTypeEnum } from '~/types1/Transaction'
 
 export const TransactionTypes = [
   {
